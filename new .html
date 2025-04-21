@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Guide</title>
+    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1 style="color: aliceblue;">EngiGuide</h1>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="routes/about.html">About</a></li>           
+            <li><a href="routes/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+        <div id="page1">
+            <h1>What are your <br> interests?</h1>
+            <div id="search">
+                <input type="text" id="interestInput" placeholder="Enter your interest to know suitable branch">
+            </div>
+            <button onclick="redirectToBranch()">Recommended Branches</button>
+        </div>
+        <div id="mostvist">
+            <h1>MOST VISITED BRANCHES</h1>
+        </div>
+        <div id="top3branchs">
+            <div>
+                <a href="routes/ai.html"><img  src="assests/ai.jpg" alt=""></a><br>
+                <h2>AI & ML</h2>
+            </div>
+            <div>
+                <a href="routes/cs.html"><img src="assests/cs.jpg" alt=""></a><br>
+                <h2>Computer science</h2>
+            </div>
+            <div>
+                <a href="routes/robo.html"><img src="assests/robo.jpg" alt=""></a><br>
+                <h2>Robotics</h2>
+            </div>
+            <div>
+                <a href="routes/ec.html"><img src="assests/ece.jpg" alt=""></a><br>
+                <h2>Electronics And Communtications</h2>
+            </div>
+            
+        </div>
+        <div class="branch1">
+            <h1>ALL OTHER BRANCHS</h1>
+            <div>
+                <a href="routes/cyb.html"><img id="top3" src="assests/cyb.jpg" alt=""></a><br>
+                <h2>Cyber security</h2>
+            </div>
+            <div>
+                <a href="routes/aero.html"><img id="top3" src="assests/aero.jpg" alt=""></a><br>
+                <h2>Aerospace</h2>
+            </div>
+            <div>
+                <a href="routes/mech.html"><img id="top3" src="assests/mech.jpg" alt=""></a><br>
+                <h2>Mechanical </h2>
+            </div>
+
+                <div>
+                    <a href="routes/civil.html"><img id="top3" src="assests/civil.jpg" alt=""></a><br>
+                    <h2>Civill Engineering</h2>
+                </div>
+                <div>
+                    <a href="routes/data.html"><img id="top3" src="assests/data.jpg" alt=""></a><br>
+                    <h2>Data science</h2>
+            
+    
+            </div>
+            
+        </div>
+    </div>
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">Chat</span>
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="chatbot">
+        <header>
+          <h2>Chatbot</h2>
+          <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+          <li class="chat incoming">
+            <!-- <span class="material-symbols-outlined">smart_toy</span> -->
+             <img src="icon/ai-assistant_17569423.gif" alt="">
+            <p>Hi there 👋<br />How can I help you today?</p>
+          </li>
+        </ul>
+        <div class="chat-input">
+          <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("show");
+        }
+
+        
+        function redirectToBranch() {
+            let inputValue = document.getElementById("interestInput").value.toLowerCase();
+            if (inputValue.includes("computer")) {
+                window.location.href = "routes/cs.html"; 
+            }
+            else if (inputValue.includes("hacking")) {
+                window.location.href = "routes/cyb.html"; 
+            }
+             
+            else if (inputValue.includes("vehicles")) {
+                window.location.href = "routes/mech.html";
+            }
+            
+            else if (inputValue.includes("rocket")) {
+                window.location.href = "routes/aero.html";
+            }
+
+
+             else {
+                alert("No matching branch found!");
+            }
+        }
+    
+    </script>
+    <script src="chatbot.js"></script>
+
+</body>
+</html>
